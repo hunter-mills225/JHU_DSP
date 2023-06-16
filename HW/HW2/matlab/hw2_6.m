@@ -1,7 +1,10 @@
-% DSP HW2 #6
-% Show x(n) conv h(n) == h(n) conv x(n)
+%!-------------------------------------------------------------------------------------------------
+%! DSP HW2 #6
+%!  - Show x(n) conv h(n) == h(n) conv x(n)
+%!-------------------------------------------------------------------------------------------------
 
 % Enviorment
+close all; clear;
 x1 = [0, 0, 1, 1, 1, 1, 0];
 h1 = [0, 0, 6, 5, 4, 3, 2, 1, 0, 0, 0];
 x2 = [0, 0, 1, 1, 1, 1, 0, 0];
@@ -20,8 +23,8 @@ y3_b = conv(h3, x3);
 % Plot response of system
 figure(1)
 subplot(2,1,1)
-start_index = -2;
-n = start_index:start_index+(length(x1)+length(h1)-2);
+start_index = -2;                                       % Depends on where the signal starts                                               
+n = start_index:start_index+(length(x1)+length(h1)-2);  % n shifts depending on signals
 stem(n, y1_a)
 title('x1(n) conv h1(n)')
 xlabel('Sample')
@@ -63,4 +66,3 @@ stem(n, y3_b)
 title('h3(n) conv x3(n)')
 xlabel('Sample')
 ylabel('y(n)')
-
