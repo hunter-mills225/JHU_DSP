@@ -112,7 +112,7 @@
 	\end{equation}
 	The inverse Fourier Transform is defined as 
 	\begin{equation}
-	x(t) = \int_{-\infty}^{\infty}X(F)e^{j2\pi Ft}dt.
+	x(t) = \int_{-\infty}^{\infty}X(F)e^{j2\pi Ft}dF.
 	\end{equation}	
 	This is called the \textit{Continuous Time Fourier Transform} (CTFT). The difference between the Fourier transform and series 
 	the former is continuous and hence the synthesis of an aperiodic signal
@@ -144,7 +144,7 @@
 	and it expresses the principle of conservation of energy in the frequency and time domain. The energy in a signal over a frequency 
 	band is,
 	\begin{equation}
-	E = \int_{F_1}^{F_1+\delta F}|X(F)|^2dF
+	E = \int_{F_1}^{F_1+\Delta F}|X(F)|^2dF
 	\end{equation}
 	If the signal x(t) is real then 
 	\begin{equation}
@@ -155,7 +155,7 @@
 	\end{equation}
 
 	\subsection{Frequency Analysis if DT Signals}
-	In contrast to CT signals which $-\infty < f < \infty$ the frequency range for DT signals is $(-\pi , \pi) or (0, 2\pi)$. A DT signal of
+	In contrast to CT signals which $-\infty < f < \infty$ the frequency range for DT signals is $(-\pi , \pi)$ or $(0, 2\pi)$. A DT signal of
 	fundamental period N can consist of frequency components separated by $2\pi /N$ radians or $f = 1/N$ cycles. Consequently,
 	the Fourier series representation will contain at most N frequency components. \\
 	\textbf{The Fourier Series for DT periodic signals}\\
@@ -218,6 +218,7 @@
 	x(n) = \frac{1}{2\pi}\int_{-\pi}^{\pi}X(\omega)e^{j\omega n}d\omega
 	\end{equation}
 	\textbf{Convergence of the Fourier Transform}\\
+
 	If the value $\sum_{n=-\infty}^{\infty}|x(n)| < \infty$ then this condition (absolutely summable) is sufficient for the existence of the DTFT. Some
 	signals are not absolutely summable but they are square summable ($E_x = \sum_{n=-\infty}^{infty}|x(n)|^2 < \infty$). If the signal is
 	absolutely summable there will be \textit{uniform convergence}. If it is square summable then there will be \textit{mean-square convergence}
@@ -228,17 +229,19 @@
 	\caption{DTFT and Gibbs Phenomenon}
 	\end{figure}
 	\textbf{Energy Density Spectrum of Aperiodic Signals}
+
 	The energy in a DT signal x(n) is 
 	\begin{equation}
 	E_x = \sum_{n = -\infty}^{\infty}|x(n)|^2
 	\end{equation}
-	Using \textbf{Parsevals relation for DT aperiodic signals} the energy can be calculated with
+	Using \textit{Parsevals relation for DT aperiodic signals} the energy can be calculated with
 	\begin{equation}
-	E_x = \int_{-\infty}^{\infty}|X(\omega)^2d\omega
+	E_x = \int_{-\infty}^{\infty}|X(\omega)|^2d\omega
 	\end{equation}
 	If x(n) is real, the magnitude has even symmetry and the phase has odd. The symmetry properties let us calculated the magnitude and phase
 	from the spectrum in the range $(0, \pi)$. \\
 	\textbf{Frequency domain classification of Signals: Bandwidth}
+
 	If the frequency components are located around zero Hz then the signal is considered baseband and low-frequency. The two types of signals
 	are shown in the next figure. 
 
@@ -251,7 +254,7 @@
 	where the bandwidth is much smaller (near 10x) than the median frequency otherwise it is wideband. A signal is bandlimited if its spectrum is zero outside
 	the frequency band. 
 	\begin{equation}
-	|X(\Omega)| = 0 for |F| > B (Bandwidth)
+	|X(\Omega)| = 0 \;\; for \;\;|F| > B (Bandwidth)
 	\end{equation}
 	Without proving, no signal can be time-limited and bandlimited at the same time. A reciprocal relationship exists between the time 
 	duration and the frequency duration. 
@@ -281,10 +284,10 @@
 	\textbf{Real Signals}\\
 	When x(n) is a real signal, the magnitude and phase spectra possess the following symmetry properties
 	\begin{equation}
-	|X(\omega)| = |X(-\omega) (even)
+	|X(\omega)| = |X(-\omega)| \; (even)
 	\end{equation}
 	\begin{equation}
-	\angle X(-\omega) = - \angle X(\omega) (odd)
+	\angle X(-\omega) = - \angle X(\omega) \;(odd)
 	\end{equation}
 	\textbf{Real and Even Signals}
 	\begin{equation}
