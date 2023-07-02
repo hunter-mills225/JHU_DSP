@@ -102,10 +102,13 @@
 	
 	Suppose the input to a stable LTI system is a periodic signal with period N. Since such a signal exists from $-\infty < n < \infty$, the response of the system at any time instant $n$ is equal to the steady state response. The response of the system to a periodic input signal is also periodic with the same period N. \\
 	\textbf{Response to Aperiodic Input Signals}\\
-	
-	When the input signal is aperiodic, we can use the Fourier transform to calculate $X(\omega) and H(\omega)$. The convolution theory is used to calculate the response of the system
+	When the input signal is aperiodic, we can use the Fourier transform to calculate $X(\omega)$ and $H(\omega)$. The convolution theory is used to calculate the response of the system
 	\begin{equation}
 	Y(\omega) = X(\omega)H(\omega)
+	\end{equation}
+	One of the most important relationships is
+	\begin{equation}
+	H(\omega) = \frac{Y(\omega)}{H(\omega)}
 	\end{equation}
 	
 	\begin{figure}[h]
@@ -133,7 +136,7 @@
 	\begin{equation}
 	|H(\omega)|^2 = H(\omega)H^*(\omega)
 	\end{equation}
-	$H(\omega)$ is obtained by evaluating $H^*(1/z^*)$. When $h(n)$ is real then the correlation table of the z-transform says $H(z)H(z^{-1}$ is the z-transform of the autocorrelation sequence $r_{hh}(m)$ of the unit sample response $h(n)$. The Wiener-Khintchine theorem states that $|H(\omega)|^2 = \mathcal{F}[r_{hh}(m)]$. If $H(z) = B(z)/A(z)$ the transforms $D(z)=B(z)B(z^{-1})$ and  $C(z)=A(z)A(z^{-1})$ are the z-transforms of the autocorrelation sequences $c_k$ and $d_k$. 
+	$H(\omega)$ is obtained by evaluating $H^*(1/z^*)$. When $h(n)$ is real then the correlation table of the z-transform says $H(z)H(z^{-1})$ is the z-transform of the autocorrelation sequence $r_{hh}(m)$ of the unit sample response $h(n)$. The Wiener-Khintchine theorem states that $|H(\omega)|^2 = \mathcal{F}[r_{hh}(m)]$. If $H(z) = B(z)/A(z)$ the transforms $D(z)=B(z)B(z^{-1})$ and  $C(z)=A(z)A(z^{-1})$ are the z-transforms of the autocorrelation sequences $c_k$ and $d_k$. 
 	\begin{equation}
 	c_l = \sum_{k=0}^{N-|l|}a_ka_{k+1}, \;\;\; -N \le l \le N
 	\end{equation}

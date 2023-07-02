@@ -37,7 +37,7 @@
  	 u(n) =
     	\begin{cases}
       	1, & \text{for n } \ge { 0}\\
-      	0, & \text{for n < 0}
+      	0, & \text{for n } < { 0}
     	\end{cases}       
 	\end{equation}
     
@@ -52,7 +52,7 @@
  	 u_r(n) =
     	\begin{cases}
       	n, & \text{for n } \ge { 0}\\
-      	0, & \text{for n < 0}
+      	0, & \text{for n} <{ 0}
     	\end{cases}       
 	\end{equation}
     
@@ -64,7 +64,7 @@
 	
 	\textbf{4.} The exponential signal is a sequence of the form
 	\begin{equation}
- 	 x(n) = a^n \;\;\;\; \text{for all} n
+ 	 x(n) = a^n \;\;\;\; \text{for all } n
 	\end{equation}
 	If (a) is a real number then x(n) will be a real signal. (a) can also be a complex number defied as:
 	\begin{equation}
@@ -139,7 +139,8 @@
 	
 	In the analysis and design of systems, it is desirable to classify the systems with the proprieties they have. For a system to posses a given property, the property \textbf{MUST} hold for every possible input signal. 
 	
-	\textbf{Memory and Memory-less Systems:} A DT system is called memoryless (static) if its output at any $n$ depends at most on the input sample at the same time, but not on past or future samples. In any other case the system is said to have memory (or be dynamic). The following equation is memoryless, 
+	\textbf{Memory and Memory-less Systems}\\
+	 A DT system is called memoryless (static) if its output at any $n$ depends at most on the input sample at the same time, but not on past or future samples. In any other case the system is said to have memory (or be dynamic). The following equation is memoryless, 
 	\begin{equation}
  	y(n) = ax(n)
 	\end{equation}
@@ -149,12 +150,12 @@
 	\end{equation}
 	has memory. 
 	
-	\textbf{Time-Invariant vs Time-Variant Systems}
+	\textbf{Time-Invariant vs Time-Variant Systems}\\
 	The general class of systems can be divided into two broad categories, time-invariant and time-variant. A system is time-invariant if its input output characteristics do not change with time. For example, a system $\mathcal{T}$ (with initial conditions = 0) has an input x(n) and produces y(n). Thus:
 	\begin{equation}
  	 y(n) = \mathcal{T}[x(n)]
 	\end{equation}
-	Now, that same input signal is delayed by k units to yield x(n-k) and applied to the same system. If the characteristics do not change with time (time-invariant) the output will be y(n-k). 
+	Now, that same input signal is delayed by k units to yield x(n-k) and applied to the same system. If the characteristics do not change with time (time-invariant) the output will be y(n-k).\\ 
 	\textbf{Definition:} A relaxed system (initial conditions = 0) $\mathcal{T}$ is time invariant if and only if 
 	\begin{equation}
  	x(n) \xrightarrow[]{\mathcal{T}}  y(n)
@@ -164,17 +165,18 @@
  	x(n-k) \xrightarrow[]{\mathcal{T}}  y(n-k)
 	\end{equation}
 	
-	\textbf{Linear vs nonlinear systems:} The general class of systems can also be subdivided into linear systems and non-linear systems. A linear system is one that satisfies the \textit{superposition principal}. Simply, the respose of the system to a weighted sum of singals will be equal to the corresponding weighted some of the outputs.
-	
+	\textbf{Linear vs nonlinear systems} \\
+	The general class of systems can also be subdivided into linear systems and non-linear systems. A linear system is one that satisfies the \textit{superposition principal}. Simply, the respose of the system to a weighted sum of singals will be equal to the corresponding weighted some of the outputs.\\
 	\textbf{Definition:} A system is linear if and only if 
 	\begin{equation}
  	\mathcal{T}[a_1x_1(n) + a_2x_2(n)] = a_1\mathcal{T}[x_1(n)] + a_2\mathcal{T}[x_2(n)]
 	\end{equation}
 	
-	\textbf{Causal vs Non-Causal System Definition:} A system is causal if the  output of the system at any time n depends only on the present and past inputs (x(n), x(n-1) ...) but doesnt depend on future samples (x(n+1)). 
+	\textbf{Causal vs Non-Causal System Definition} \\
+	A system is causal if the  output of the system at any time n depends only on the present and past inputs (x(n), x(n-1) ...) but doesnt depend on future samples (x(n+1)). 
 	
-	\textbf{Stable vs Unstable Systems:} Stability is an important property that must be considered in any practical application of a system. Unstable systems usually behave in erratic and extreme ways that can cause overflow in a practical implementation.
-	
+	\textbf{Stable vs Unstable Systems} \\
+	Stability is an important property that must be considered in any practical application of a system. Unstable systems usually behave in erratic and extreme ways that can cause overflow in a practical implementation.\\
 	\textbf{Definition:} An arbitrary relaxed system is said to be bounded input - bounded output (BIBO) stable if and only if every bounded input produces a bounded output. Good example on page 67.
 	\begin{equation}
  	|x(n)| \le M_x < \infty, \;\;\;\; |y(n)| \le M_y < \infty
@@ -232,7 +234,7 @@
 	\end{equation}
 	This shows that it follows the superposition property and is known as the \textit{superposition summation}. If the system is \textbf{time invariant} and \textbf{linear} (LTI), the impulse response simplifies considerably.
 	\begin{equation}
- 	h(n) = \mathcal{T} \delta(n)
+ 	h(n) = \mathcal{T}[ \delta(n)]
 	\end{equation}
 	By the time invariance property, the impulse response to $\delta(n-k)$ is
 	\begin{equation}
@@ -291,7 +293,7 @@
 	\end{equation}
 	and the zero input response is:
 	\begin{equation}
- 	y(n) = a^{n+1}y(-1)
+ 	y_{zi}(n) = a^{n+1}y(-1)
 	\end{equation}
 	The full response if 
 	\begin{equation}
@@ -299,7 +301,7 @@
 	\end{equation}
 	The previous example was a first order difference equation (simplest). The general form for a difference equation is 
 	\begin{equation}
- 	y(n) = -\sum{k=1}^N a_ky(n-k) + \sum_{k=0}^{M}b_k x(n-k)
+ 	y(n) = -\sum_{k=1}^N a_ky(n-k) + \sum_{k=0}^{M}b_k x(n-k)
 	\end{equation}
 	The integer N is the order of the difference equation or system.
 	

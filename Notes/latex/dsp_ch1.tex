@@ -52,18 +52,14 @@
 	\includegraphics[width=10cm]{ct_sin}
 	\caption{Example of analog sine wave}
 	\end{figure}
-	
-	An analog sinusoidal signal is characterized by the following properties:
-	
+	An analog sinusoidal signal is characterized by the following properties:\\
 	\textbf{A1.} For every fixed value of the frequency F, the sine wave will be periodic.
 	\begin{equation}  
 	x_a(t + T_p) = x_a(t)  
     \end{equation}
-    where $T+p = 1/F$ is the fundamental period of the sine wave. If a function of multiple sine waves added together, one must find the lowest common multiple of the frequencies. If there is none, the function is not periodic.
-    
-    \textbf{A2.} CT sine waves with different frequencies are themselves distinct. 
-    
-    \textbf{A3.} Increasing the frequency F results in an increase in the rate of oscillation of the signal.
+    where $T_p = 1/F$ is the fundamental period of the sine wave. If a function of multiple sine waves added together, one must find the lowest common multiple of the frequencies. If there is none, the function is not periodic.\\
+    \textbf{A2.} CT sine waves with different frequencies are themselves distinct. \\
+    \textbf{A3.} Increasing the frequency F results in an increase in the rate of oscillation of the signal.\\
     Euler's Identity:
     \begin{equation}  
 	e^{\pm j\phi} = \cos\phi \pm j\sin\phi
@@ -82,8 +78,7 @@
     \begin{equation}  
 	\omega = 2 \pi f
     \end{equation}
-	DT sinusoids are characterized by the following properties:
-	
+	DT sinusoids are characterized by the following properties:\\
 	\textbf{B1.} A DT sinusiod is periodic only if its frequency f is a rational number.
 	\begin{equation}  
 	x[n + N] = x[n], \;\;\; for \; all\; n
@@ -100,10 +95,9 @@
     \begin{equation}  
 	f_0 = \frac{k}{N}
     \end{equation}
-    
-    \textbf{B2.} DT sinusiods whose frequencies are sparated by an integer multiple of $2\pi$ are identical. For all frequencies $|\omega| > \pi$ or $|f| > .5$ are aliases. The difference between CT and DT signals are that while any frequency of CT signal is distinct not different frequencies of a DT signal are distinct.
-    
-    \textbf{B3.} The highest rate of oscillation in a DT sinusoid is attained when $\omega = \pm \pi$ or f = $\pm.5$
+    \textbf{B2.} DT sinusiods whose frequencies are sparated by an integer multiple of $2\pi$ are identical. For all frequencies $|\omega| > \pi$ or $|f| > .5$ are aliases. The difference between CT and DT signals are that while any frequency of CT signal is distinct not different frequencies of a DT signal are distinct.\\
+    \textbf{B3.} The highest rate of oscillation in a DT sinusoid is attained when $\omega = \pm \pi$ or f = $\pm.5$\\
+   
     \begin{figure}[h]
     \centering
 	\includegraphics[width=10cm]{dt_freq}
@@ -111,13 +105,10 @@
 	\end{figure}
 	
 	\section{ADC and DAC}
-    Analog to digital conversion is done in the order of sampling, quantizing and encoding.
-    
-    \!\!\!\!\!\!\!\!\!\textit{Sampling}: This is the conversion of a CT signal into a DT signal by taking samples of the CT wave at distinct time instants.
-    
-    \!\!\!\!\!\!\!\!\!\textit{Quantization}: Rounding the analog signal to a discrete value. 
-    
-    \!\!\!\!\!\!\!\!\!\textit{Coding}: Converting from the quantized value to a binary value.
+    Analog to digital conversion is done in the order of sampling, quantizing and encoding.\\
+    \textit{Sampling}: This is the conversion of a CT signal into a DT signal by taking samples of the CT wave at distinct time instants.\\
+    \textit{Quantization}: Rounding the analog signal to a discrete value. \\
+    \textit{Coding}: Converting from the quantized value to a binary value.\\
     
     \subsection{Sampling of Analog Signals}
     In this book the only type of sampling discussed is uniform sampling and is described by:
@@ -155,7 +146,7 @@
 	\end{figure}
 	
 	\subsection{Sampling Theory}
-	The fundamental difference between CT and DT signals is the range of values. Periodic sampling of a CT signal implies a mapping of the infinite frequency range, F (or $\Omega$), to a finite frequency rage, f (or $\omega$), for DT signals. Since the highest frequency in a DT signal is $\omega = pi$ or f = .5, it follows that, with sampling at $F_s$, the corresponding highest values or F and $\Omega$ are
+	The fundamental difference between CT and DT signals is the range of values. Periodic sampling of a CT signal implies a mapping of the infinite frequency range, F (or $\Omega$), to a finite frequency rage, f (or $\omega$), for DT signals. Since the highest frequency in a DT signal is $\omega = \pi$ or $f$ = .5, it follows that, with sampling at $F_s$, the corresponding highest values or F and $\Omega$ are
 	\begin{equation}  
 	F_{\mathrm{max}} = \frac{F_s}{2} = \frac{1}{2T}
     \end{equation}
