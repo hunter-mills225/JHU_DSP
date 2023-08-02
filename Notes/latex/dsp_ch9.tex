@@ -1,0 +1,63 @@
+\documentclass{article} % \documentclass{} is the first command in any LaTeX code.  It is used to define what kind of document you are creating such as an article or a book, and begins the document preamble
+
+\usepackage{amsmath} % \usepackage is a command that allows you to add functionality to your LaTeX code
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\title{Implementation of Discrete Time Systems} % Sets article title
+\author{Hunter Mills} % Sets authors name
+\date{\today} % Sets date for date compiled
+
+% The preamble ends with the command \begin{document}
+\begin{document} % All begin commands must be paired with an end command somewhere
+    \maketitle % creates title using information in preamble (title, author, date)
+    
+    \section{Structures for the Realization of DT Systems} % creates a section
+    An important class of LTI DT systems characterized by the general linear constant coefficient difference equation
+    \begin{equation}
+    y[n] = -\sum_{k=1}^Na_ky[n-k] + \sum_{k=0}^Mb_kx[n-k]
+    \end{equation}
+    which can also be shown with the z-transform
+    \begin{equation}
+    H(z) = \frac{\sum_{k=0}^Mb_kz^{-k}}{1 + \sum_{k=1}^Nz_kz^{-k}}
+    \end{equation}
+    The focus in this chapter is on the various methods of implementing the above systems in hardware or software. You can view (1) as a computational procedure (an algorithm) and there are different structures to implement these systems. Quatization effects are inherent in any digital implementation of the system. 
+    
+    \section{Structures for FIR Systems}
+    In general an FIR system is described by the difference equation 
+    \begin{equation}
+    y[n] = \sum_{k=0}^{M-1}b_kx[n-k]
+    \end{equation}
+    or by the system function
+    \begin{equation}
+    H(z) = \sum_{k=0}^{M-1}b_kz^{-k}
+    \end{equation}
+	The unit sample response of the FIR system is identical to the coefficients $b_k$. The length of the FIR filter is $M$. The structures covered in the text are called the direct form, cascade form and frequency-sampling and a lattice realization. It can also be realized by means of FFT that was covered in chapter 8. All of these diagrams are shown in chapter 9.
+	
+	\subsection{Direct Form}
+	The Direct form is derived from 
+	\begin{equation}
+	y[n] = \sum_{k=0}^{M-1}h[k]x[n-k]
+	\end{equation}
+	
+	\subsection{Cascade Form}
+	The Cascade Form is derived from
+	\begin{equation}
+	H(z) = \Pi_{k=1}^KH_k(z)
+	\end{equation}
+	where
+	\begin{equation}
+	H_k(z) = b_{k0} + b_{k1}z^{-1} + b_{k2}z^{-2}, \;\;\;\; k = 1:K
+	\end{equation}
+	and $K$ is the integer part of $(M+1)/2$The filter parameter $b_0$ may be equally distributed among the $K$ filter sections such that $b_0 = b_{10}b_{20}...b_{K0}$ or it may be assigned to a single filter section. The zeros of $H(z)$ are grouped in pairs to produce the second order IR systems of the form (7) and it is always desirable to form pairs of complex conjugate roots so the coefficients $b_{ki}$ are real valued. 
+	
+	\subsection{Frequency-Sampling Structures}
+	The frequency samping realization is an alternative structure for an FIR filter in which the parameters that characterize the filter are the values of the desired frequency response instead of the impulse response $h[n]$. To derive the frequency sampling structure we specify the desired frequency response at a set of equally spaced frequencies namely
+	\begin{equation}
+	\omega_k = \frac{2\pi}{M}(k+\alpha)
+	\end{equation}
+	where $k = 0:\frac{M-1}{2}$ for $M$ odd, $k=0:\frac{M}{2}-1$ for even and $\alpha = 0$ or $\frac{1}{2}$. The system function is 
+	\begin{equation}
+	H(z) = \frac{1-z^{-M}e^{j2\pi \alpha}}{M} \sum_{k=0}^{M-1} \frac{H(k+\alpha)}{1-e^{j2\pi (k+\alpha)/M}z^{-1}}
+	\end{equation}
+	
+	\subsection{Lattice Structure}
