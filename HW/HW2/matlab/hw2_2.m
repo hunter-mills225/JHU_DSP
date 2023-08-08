@@ -10,6 +10,7 @@
 
 % Enviorment setup
 clear; close all;
+addpath([fileparts(mfilename('fullpath')), '/../../functions']);
 n = linspace(-10, 10, 21);
 indexs = 8:14;
 delay = 6; 

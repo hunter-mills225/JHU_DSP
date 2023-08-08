@@ -5,6 +5,7 @@
 
 % Enviorment setup
 close all; clear;
+addpath([fileparts(mfilename('fullpath')), '/../../functions']);
 n = -4:4;
 
 % Calculate delta equation

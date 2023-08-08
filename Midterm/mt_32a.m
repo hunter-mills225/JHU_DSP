@@ -5,6 +5,7 @@
 %!-------------------------------------------------------------------------
 
 %! Enviorment
+addpath([fileparts(mfilename('fullpath')), '/../HW/functions']);
 n = 0:10;
 
 % Singal
