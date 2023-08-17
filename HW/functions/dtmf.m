@@ -49,4 +49,4 @@ for n = 1:N
    
 end
 
-soundsc(x,Fs)
+%soundsc(x,Fs)

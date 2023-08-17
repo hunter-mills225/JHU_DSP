@@ -8,7 +8,7 @@
 %! Enviorment
 clear; close all; clc;
 addpath([fileparts(mfilename('fullpath')), '/../../functions']);
-coeff = load("coeff_3.mat");
+coeff = load("filters/coeff_3.mat");
 
 %! Variables
 Fs      = 1000;
